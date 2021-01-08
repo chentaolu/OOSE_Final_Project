@@ -1,31 +1,35 @@
 package Framework;
+import java.util.*;
 
+/**
+ * 
+ */
 public class Board {
-  
-  private int row;
-  private int column;
-  
-  public Board(int row, int column) {
-    
-    this.setRow(row);
-    this.setColumn(column);
-    
-  }
 
-  public int getRow() {
-    return row;
-  }
+    /**
+     * Default constructor
+     */
+    public Board() {
+    }
 
-  public void setRow(int row) {
-    this.row = row;
-  }
+    /**
+     * 
+     */
+    public int width;
 
-  public int getColumn() {
-    return column;
-  }
+    /**
+     * 
+     */
+    public int length;
 
-  public void setColumn(int column) {
-    this.column = column;
-  }
-  
+    /**
+     * 
+     */
+    public int row;
+
+    /**
+     * 
+     */
+    public int column;
+
 }

@@ -1,12 +1,50 @@
 package Framework;
+import java.util.*;
 
-public abstract class Rules {
-  
-  public abstract boolean chessMovement();
-  public abstract boolean eatChessRules();
-  public abstract boolean makeChessWeight();
-  public abstract boolean isNull();
-  public abstract boolean isSameRow();
-  public abstract boolean isSameColumn();
-  
+/**
+ * 
+ */
+public class Rules {
+
+    /**
+     * Default constructor
+     */
+    public Rules() {
+    }
+
+    /**
+     * 
+     */
+    public void chessMovement() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void eatChessRules() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void isNull() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void isSameRow() {
+        // TODO implement here
+    }
+
+    /**
+     * 
+     */
+    public void isSameColumn() {
+        // TODO implement here
+    }
+
 }

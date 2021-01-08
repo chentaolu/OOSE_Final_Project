@@ -1,51 +1,41 @@
 package Framework;
+import java.util.*;
 
-public class Chess {
-  
-  private int x;            //x座標
-  private int y;            //y座標
-  private int weight;       //優先權
-  private int user;         //陣營
-  
-  public Chess(int x, int y, int weight, int user) {
-    
-    this.setX(x);
-    this.setY(y);
-    this.setWeight(weight);
-    this.setUser(user);
-    
-  }
+/**
+ * 
+ */
+public abstract class Chess {
 
-  public int getX() {
-    return x;
-  }
+    /**
+     * Default constructor
+     */
+    public Chess() {
+    }
 
-  public void setX(int x) {
-    this.x = x;
-  }
+    /**
+     * 
+     */
+    public int x;
 
-  public int getY() {
-    return y;
-  }
+    /**
+     * 
+     */
+    public int y;
 
-  public void setY(int y) {
-    this.y = y;
-  }
+    /**
+     * 
+     */
+    public int priority;
 
-  public int getWeight() {
-    return weight;
-  }
+    /**
+     * 
+     */
+    public boolean Group;
 
-  public void setWeight(int weight) {
-    this.weight = weight;
-  }
 
-  public int getUser() {
-    return user;
-  }
+    /**
+     * 
+     */
+    public abstract void move();
 
-  public void setUser(int user) {
-    this.user = user;
-  }
-  
 }
