@@ -32,4 +32,36 @@ public class Board {
      */
     private int column;
 
+    public int getWidth() {
+      return width;
+    }
+
+    public void setWidth(int width) {
+      this.width = width;
+    }
+
+    public int getLength() {
+      return length;
+    }
+
+    public void setLength(int length) {
+      this.length = length;
+    }
+
+    public int getRow() {
+      return row;
+    }
+
+    public void setRow(int row) {
+      this.row = row;
+    }
+
+    public int getColumn() {
+      return column;
+    }
+
+    public void setColumn(int column) {
+      this.column = column;
+    }
+
 }
