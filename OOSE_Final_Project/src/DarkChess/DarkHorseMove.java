@@ -1,10 +1,9 @@
 package DarkChess;
 
-import Framework.MoveStrategy;
 import Framework.AbstractChess;
+import Framework.MoveStrategy;
 
-
-public class DarkHourseMove implements MoveStrategy {
+public class DarkHorseMove implements MoveStrategy {
 
     @Override
     public boolean CanMove(AbstractChess chess, int XDisplacement, int YDisplacement) {

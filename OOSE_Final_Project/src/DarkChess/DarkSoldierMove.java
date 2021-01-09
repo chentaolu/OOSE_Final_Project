@@ -9,4 +9,5 @@ public class DarkSoldierMove implements MoveStrategy {
         // TODO Auto-generated method stub
         return false;
     }
+
 }

@@ -8,36 +8,36 @@ public interface AbstractChessFactory {
     /**
      * 
      */
-    public abstract void createGeneral();
+    public abstract AbstractChess createGeneral(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createGuard();
+    public abstract AbstractChess createGuard(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createElephant();
+    public abstract AbstractChess createElephant(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createChariot();
+    public abstract AbstractChess createChariot(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createHorse();
+    public abstract AbstractChess createHorse(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createCannon();
+    public abstract AbstractChess createCannon(int x, int y,  boolean Group);
 
     /**
      * 
      */
-    public abstract void createSoldier();
+    public abstract AbstractChess createSoldier(int x, int y,  boolean Group);
 
 }
