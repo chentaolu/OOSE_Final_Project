@@ -7,7 +7,7 @@ public class DarkChessFactory implements AbstractChessFactory {
     @Override
     public void createGeneral() {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override

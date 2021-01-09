@@ -8,7 +8,7 @@ public interface MoveStrategy {
     /**
      * 
      */
-    public boolean move(AbstractChess chess, int XDisplacement, int YDisplacement);
+    public boolean CanMove(AbstractChess chess, int XDisplacement, int YDisplacement);
 
 
 }
