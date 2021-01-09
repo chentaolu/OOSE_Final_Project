@@ -1,5 +1,4 @@
 package Framework;
-import java.util.*;
 
 /**
  * 
@@ -9,12 +8,9 @@ public abstract class AbstractSoldier extends AbstractChess {
     /**
      * Default constructor
      */
-    public AbstractSoldier() {
+    public AbstractSoldier(int x, int y, int priority, boolean Group) {
+        super(x, y, priority, Group);
     }
 
-    /**
-     * 
-     */
-    public abstract void move();
 
 }

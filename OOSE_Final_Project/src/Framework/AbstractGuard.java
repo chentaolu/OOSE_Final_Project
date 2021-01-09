@@ -1,5 +1,4 @@
 package Framework;
-import java.util.*;
 
 /**
  * 
@@ -9,12 +8,8 @@ public abstract class AbstractGuard extends AbstractChess {
     /**
      * Default constructor
      */
-    public AbstractGuard() {
+    public AbstractGuard(int x, int y, int priority, boolean Group) {
+        super(x, y, priority, Group);
     }
-
-    /**
-     * 
-     */
-    public abstract void move();
 
 }

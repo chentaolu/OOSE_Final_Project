@@ -1,5 +1,4 @@
 package Framework;
-import java.util.*;
 
 /**
  * 
@@ -9,6 +8,7 @@ public interface MoveStrategy {
     /**
      * 
      */
-    public void move();
+    public boolean move(AbstractChess chess, int XDisplacement, int YDisplacement);
+
 
 }

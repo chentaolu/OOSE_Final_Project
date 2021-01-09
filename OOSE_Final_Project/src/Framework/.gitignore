@@ -18,3 +18,5 @@
 /MoveStrategy.class
 /Rules.class
 /SoldierMove.class
+/eatStrategy.class
+/EatStrategy.class
