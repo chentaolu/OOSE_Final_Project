@@ -38,13 +38,13 @@ public class DarkChessFactory implements AbstractChessFactory {
     @Override
     public AbstractChess createCannon(int x, int y, boolean Group) {
         // TODO Auto-generated method stub
-        return new DarkCannonChess(x, y, 2, Group, new DarkCannonMove(), new DarkCannonEat());
+        return new DarkCannonChess(x, y, 1, Group, new DarkCannonMove(), new DarkCannonEat());
     }
 
     @Override
     public AbstractChess createSoldier(int x, int y, boolean Group) {
         // TODO Auto-generated method stub
-        return new DarkSoldierChess(x, y, 1, Group, new DarkSoldierMove(), new DarkSoldierEat());
+        return new DarkSoldierChess(x, y, 2, Group, new DarkSoldierMove(), new DarkSoldierEat());
     }
 
 }
