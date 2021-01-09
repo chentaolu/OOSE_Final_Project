@@ -4,13 +4,20 @@ import java.util.*;
 /**
  * 
  */
-public abstract class AbstractChessGroupFactory {
+public abstract class AbstractChessFactory {
 
     /**
      * Default constructor
      */
-    public AbstractChessGroupFactory() {
+    public AbstractChessFactory() {
     }
+
+
+
+
+
+
+
 
     /**
      * 
