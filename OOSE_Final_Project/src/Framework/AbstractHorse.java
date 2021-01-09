@@ -1,5 +1,4 @@
 package Framework;
-import java.util.*;
 
 /**
  * 
@@ -9,12 +8,7 @@ public abstract class AbstractHorse extends AbstractChess {
     /**
      * Default constructor
      */
-    public AbstractHorse() {
+    public AbstractHorse(int x, int y, int priority, boolean Group) {
+        super(x, y, priority, Group);
     }
-
-    /**
-     * 
-     */
-    public abstract void move();
-
 }
