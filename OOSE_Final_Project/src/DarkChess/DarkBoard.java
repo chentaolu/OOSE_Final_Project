@@ -1,9 +1,15 @@
 package DarkChess;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import Framework.AbstractChess;
 import Framework.Board;
 
 public class DarkBoard extends Board {
     
+    private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
+
     private String boardPath = "E:\\netWork\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\board3.png";
     
     public DarkBoard() {
@@ -23,5 +29,4 @@ public class DarkBoard extends Board {
         return super.getLength();
     }
     
-
 }
