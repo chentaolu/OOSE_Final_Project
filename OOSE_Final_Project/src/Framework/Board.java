@@ -5,32 +5,32 @@ import java.util.*;
  * 
  */
 public class Board {
-
+  
+    /**
+     * 寬
+     */
+    private int width;
+  
+    /**
+     * 長
+     */
+    private int length;
+  
+    /**
+     * row * column棋盤
+     */
+    private int row;
+    private int column;
+    
     /**
      * Default constructor
      */
-    public Board() {
+    public Board(int width, int lengh, int row, int column) {
+      this.setWidth(width);
+      this.setLength(lengh);
+      this.setRow(row);
+      this.setColumn(column);
     }
-
-    /**
-     * 
-     */
-    private int width;
-
-    /**
-     * 
-     */
-    private int length;
-
-    /**
-     * 
-     */
-    private int row;
-
-    /**
-     * 
-     */
-    private int column;
 
     public int getWidth() {
       return width;
