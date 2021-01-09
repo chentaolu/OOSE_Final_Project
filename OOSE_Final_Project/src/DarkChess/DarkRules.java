@@ -2,6 +2,6 @@ package DarkChess;
 
 import Framework.Rules;
 
-public class DarkRules {
+public class DarkRules extends Rules {
 
 }
