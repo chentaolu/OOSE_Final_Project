@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class RedGeneral extends AbstractGeneralFactory {
+public class RedGeneral extends AbstractGeneral {
 
     /**
      * Default constructor
      */
     public RedGeneral() {
     }
-
-    /**
-     * 
-     */
-    public void createGeneral() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createGeneral();
 
 }

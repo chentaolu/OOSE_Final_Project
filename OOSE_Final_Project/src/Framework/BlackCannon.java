@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class BlackCannon extends AbstractCannonFactory {
+public class BlackCannon extends AbstractCannon {
 
     /**
      * Default constructor
      */
     public BlackCannon() {
     }
-
-    /**
-     * 
-     */
-    public void createCannon() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createCannon();
 
 }

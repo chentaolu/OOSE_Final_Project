@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class BlackElephant extends AbstractElephantFactory {
+public class BlackElephant extends AbstractElephant {
 
     /**
      * Default constructor
      */
     public BlackElephant() {
     }
-
-    /**
-     * 
-     */
-    public void createElephant() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createElephant();
 
 }

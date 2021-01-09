@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class BlackGeneral extends AbstractGeneralFactory {
+public class BlackGeneral extends AbstractGeneral {
 
     /**
      * Default constructor
      */
     public BlackGeneral() {
     }
-
-    /**
-     * 
-     */
-    public void createGeneral() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createGeneral();
 
 }

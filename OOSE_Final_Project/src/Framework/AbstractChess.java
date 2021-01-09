@@ -4,33 +4,33 @@ import java.util.*;
 /**
  * 
  */
-public abstract class Chess {
+public abstract class AbstractChess {
 
     /**
      * Default constructor
      */
-    public Chess() {
+    public AbstractChess() {
     }
 
     /**
      * 
      */
-    public int x;
+    private int x;
 
     /**
      * 
      */
-    public int y;
+    private int y;
 
     /**
      * 
      */
-    public int priority;
+    private int priority;
 
     /**
      * 
      */
-    public boolean Group;
+    private boolean Group;
 
 
     /**

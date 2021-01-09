@@ -4,17 +4,17 @@ import java.util.*;
 /**
  * 
  */
-public abstract class AbstractCannonFactory {
+public abstract class AbstractHorse extends AbstractChess {
 
     /**
      * Default constructor
      */
-    public AbstractCannonFactory() {
+    public AbstractHorse() {
     }
 
     /**
      * 
      */
-    public abstract void createCannon();
+    public abstract void move();
 
 }

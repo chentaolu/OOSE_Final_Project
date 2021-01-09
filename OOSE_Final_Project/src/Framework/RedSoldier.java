@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class RedSoldier extends AbstractSoldierFactory {
+public class RedSoldier extends AbstractSoldier {
 
     /**
      * Default constructor
      */
     public RedSoldier() {
     }
-
-    /**
-     * 
-     */
-    public void createSoldier() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createSoldier();
 
 }

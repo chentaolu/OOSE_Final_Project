@@ -4,12 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class GuardChess extends Chess {
+public abstract class AbstractElephant extends AbstractChess {
 
     /**
      * Default constructor
      */
-    public GuardChess() {
+    public AbstractElephant() {
     }
 
     /**

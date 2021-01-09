@@ -15,21 +15,21 @@ public class Board {
     /**
      * 
      */
-    public int width;
+    private int width;
 
     /**
      * 
      */
-    public int length;
+    private int length;
 
     /**
      * 
      */
-    public int row;
+    private int row;
 
     /**
      * 
      */
-    public int column;
+    private int column;
 
 }

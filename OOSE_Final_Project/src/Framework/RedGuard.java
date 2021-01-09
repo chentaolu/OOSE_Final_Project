@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class RedGuard extends AbstractGuardFactory {
+public class RedGuard extends AbstractGuard {
 
     /**
      * Default constructor
      */
     public RedGuard() {
     }
-
-    /**
-     * 
-     */
-    public void createGuard() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createGuard();
 
 }

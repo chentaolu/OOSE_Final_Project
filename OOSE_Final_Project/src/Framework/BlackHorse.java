@@ -4,24 +4,12 @@ import java.util.*;
 /**
  * 
  */
-public class BlackHorse extends AbstractHorseFactory {
+public class BlackHorse extends AbstractHorse {
 
     /**
      * Default constructor
      */
     public BlackHorse() {
     }
-
-    /**
-     * 
-     */
-    public void createChariot() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public abstract void createChariot();
 
 }
