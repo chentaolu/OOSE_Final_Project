@@ -1,6 +1,10 @@
 package DarkChess;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.*;
+import Framework.AbstractChess;
 
 public class Main {
 

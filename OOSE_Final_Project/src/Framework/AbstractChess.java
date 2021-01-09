@@ -39,7 +39,9 @@ public abstract class AbstractChess {
     /**
      * 
      */
-    public abstract boolean move(int XDisplacement, int YDisplacement);
+    public abstract void move(AbstractChess chess, int XDisplacement, int YDisplacement);
+    
+    public abstract void eat(AbstractChess initiative, AbstractChess passive, int XDisplacement, int YDisplacement);
 
 
     public int getX() {
