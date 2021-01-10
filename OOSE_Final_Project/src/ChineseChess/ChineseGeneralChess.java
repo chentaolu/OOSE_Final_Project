@@ -2,11 +2,13 @@ package ChineseChess;
 
 import Framework.AbstractChess;
 import Framework.AbstractGeneral;
+import Framework.EatStrategy;
+import Framework.MoveStrategy;
 
 public class ChineseGeneralChess extends AbstractGeneral {
 
-  public ChineseGeneralChess(int x, int y, int priority, boolean Group) {
-    super(x, y, priority, Group);
+  public ChineseGeneralChess(int x, int y, int priority, boolean Group, boolean status) {
+    super(x, y, priority, Group, status);
     // TODO Auto-generated constructor stub
   }
 
@@ -20,6 +22,30 @@ public class ChineseGeneralChess extends AbstractGeneral {
   public void eat(AbstractChess initiative, AbstractChess passive, int XDisplacement, int YDisplacement) {
     // TODO Auto-generated method stub
 
+  }
+
+  @Override
+  public MoveStrategy getMoveStrategy() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setMoveStrategy(MoveStrategy moveStrategy) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public EatStrategy getEatStrategy() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setEatStrategy(EatStrategy eatStrategy) {
+    // TODO Auto-generated method stub
+    
   }
 
 }
