@@ -83,7 +83,7 @@ public class Main {
                         } else {
                             whoFirst.setText("P1:紅棋 P2:黑棋");
                         }                
-                        whoFirst.setBounds(20, 60, 200, 40);
+                        whoFirst.setBounds(20, 80, 200, 40);
                         panel.add(whoFirst);                        
                     } else {
                         if (!darkBoard.selectToEmpty(x + 1, y + 1) && !darkBoard.isChessOpen(x + 1, y + 1)) {

@@ -20,7 +20,7 @@ public class DarkBoard extends Board {
     private DarkRules darkRules = new DarkRules();
     
     public DarkBoard() {
-        super(900, 461, 4, 8);
+        super(940, 500, 4, 8);
         // TODO Auto-generated constructor stub
         random = Ran(32);
         int count = 0;
