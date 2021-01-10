@@ -114,6 +114,10 @@ public class Main {
                                 }
                             }
                         }
+                        String gameStatus = darkBoard.getEndGame();
+                        if (!gameStatus.equals("continue")) {
+                            System.exit(0);
+                        }
                     }
                 }
                 
