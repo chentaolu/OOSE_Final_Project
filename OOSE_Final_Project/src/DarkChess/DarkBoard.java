@@ -16,11 +16,11 @@ public class DarkBoard extends Board {
     private DarkChessFactory darkChessFactory = new DarkChessFactory();
     private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
     private int random[] = new int[32];
-    private String boardPath = "..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\board3.png";
+    private String boardPath = "..\\OOSE_Final_Project\\src\\image\\board3.png";
     private DarkRules darkRules = new DarkRules();
     
     public DarkBoard() {
-        super(900, 461, 4, 8);
+        super(940, 500, 4, 8);
         // TODO Auto-generated constructor stub
         random = Ran(32);
         int count = 0;
@@ -107,11 +107,19 @@ public class DarkBoard extends Board {
             if (startY > endY) {
                 for (int turn = startY - 1 ; turn >= endY; turn--) {
                     System.out.println(turn);
-                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    if (this.selectToEmpty(initiative.getX(), turn)) {
+                        continue;
+                    } else {
+                        aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    }
                 }        
             } else if(startY < endY) {
                 for (int turn = startY + 1 ; turn <= endY; turn++) {
-                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    if (this.selectToEmpty(initiative.getX(), turn)) {
+                        continue;
+                    } else {
+                        aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    }
                 }
             }
         } else if (initiative.getY() == passive.getY()) {
@@ -119,11 +127,20 @@ public class DarkBoard extends Board {
             endX = passive.getX();
             if(startX > endX) {
                 for (int turn = startX - 1 ; turn >= endX; turn--) {
-                    aboveChesses.add(getChessByLocation(turn, initiative.getY()));
+                    if (this.selectToEmpty(turn, initiative.getY())) {
+                        continue;
+                    } else {
+                       aboveChesses.add(getChessByLocation(turn, initiative.getY())); 
+                    }
+                    
                 }
             } else if (startX < endX) {
                 for (int turn = startX + 1 ; turn <= endX; turn++) {
-                    aboveChesses.add(getChessByLocation(turn, initiative.getY()));
+                    if (this.selectToEmpty(turn, initiative.getY())) {
+                        continue;
+                    } else {
+                       aboveChesses.add(getChessByLocation(turn, initiative.getY())); 
+                    }
                 }
             }
         }
@@ -186,5 +203,6 @@ public class DarkBoard extends Board {
     public String getEndGame( ) {
         return this.darkRules.endRule(chesses);
     }
+    
     
 }

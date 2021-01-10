@@ -46,7 +46,7 @@ public class Main {
             int x = darkBoard.getChesses().get(i).getX()-1;
             int y = darkBoard.getChesses().get(i).getY()-1;
             btn[x][y] = new JButton();
-            btn[x][y].setIcon(new ImageIcon("..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\a.png")); 
+            btn[x][y].setIcon(new ImageIcon("..\\OOSE_Final_Project\\src\\image\\a.png")); 
             //..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\a.png
             btn[x][y].setBounds(xbound[x],ybound[y], 60, 60);
             btn[x][y].setBorderPainted(false);
@@ -83,7 +83,7 @@ public class Main {
                         } else {
                             whoFirst.setText("P1:紅棋 P2:黑棋");
                         }                
-                        whoFirst.setBounds(20, 60, 200, 40);
+                        whoFirst.setBounds(20, 80, 200, 40);
                         panel.add(whoFirst);                        
                     } else {
                         if (!darkBoard.selectToEmpty(x + 1, y + 1) && !darkBoard.isChessOpen(x + 1, y + 1)) {
