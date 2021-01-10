@@ -51,13 +51,10 @@ public class DarkGuardChess extends AbstractGuard {
     @Override
     public void eat(AbstractChess initiative, AbstractChess passive, int XDisplacement, int YDisplacement) {
         // TODO Auto-generated method stub
-        if (XDisplacement != 0 && YDisplacement != 0) {
-        } else {
-            initiative.setX(initiative.getX());
-            initiative.setY(initiative.getY());
-            passive.setX(-1);
-            passive.setY(-1);
-        }
+        initiative.setX(passive.getX());
+        initiative.setY(passive.getY());
+        passive.setX(-1);
+        passive.setY(-1);
     }
     
     public String getChessPNGPath() {

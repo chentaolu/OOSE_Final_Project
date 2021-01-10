@@ -17,6 +17,8 @@ public class DarkSoldierEat implements EatStrategy {
         if (XDisplacement != 0 && YDisplacement != 0) {
             return false;
         }
+        System.out.println("count = "+count);
+        System.out.println("passive Priority = " + passive.get(0).getChessPNGPath());
         if (initiative.getPriority() >= passive.get(0).getPriority() || passive.get(0).getPriority() == 7) {
             return true;
         }
