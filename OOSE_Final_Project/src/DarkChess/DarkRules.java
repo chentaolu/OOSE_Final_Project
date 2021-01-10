@@ -26,4 +26,28 @@ public class DarkRules extends Rules {
             return true;
         }
     }
+    
+    public String endRule(List<AbstractChess> chesses) {
+        int blackDieChess = 0;
+        int redDieChess = 0;
+        
+        for(AbstractChess chess : chesses) {
+            if (chess.isGroup() == true && chess.getX() == -1 && chess.getY() == -1) {
+                blackDieChess = blackDieChess + 1;
+            }
+            if (chess.isGroup() == false && chess.getX() == -1 && chess.getY() == -1) {
+                redDieChess = redDieChess + 1;
+            }
+        }
+        
+        if (blackDieChess == 16) {
+            return "red win";
+        } else if (redDieChess == 16) {
+            return "black win";
+        } else {
+            return "continue";
+        }
+        
+    }
+    
 }
