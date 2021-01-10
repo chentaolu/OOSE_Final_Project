@@ -8,11 +8,12 @@ public abstract class AbstractChess {
     /**
      * Default constructor
      */
-    public AbstractChess(int x, int y, int priority, boolean Group) {
+    public AbstractChess(int x, int y, int priority, boolean Group, boolean status) {
         this.setX(x);
         this.setY(y);
         this.setPriority(priority);
         this.setGroup(Group);
+        this.status = status; 
     }
 
     /**
@@ -34,6 +35,8 @@ public abstract class AbstractChess {
      * 
      */
     private boolean Group;
+    
+    public boolean status;
 
 
     /**
@@ -83,5 +86,8 @@ public abstract class AbstractChess {
         Group = group;
     }
     
-
+    public abstract MoveStrategy getMoveStrategy();
+    public abstract void setMoveStrategy(MoveStrategy moveStrategy);
+    public abstract EatStrategy getEatStrategy();
+    public abstract void setEatStrategy(EatStrategy eatStrategy);
 }

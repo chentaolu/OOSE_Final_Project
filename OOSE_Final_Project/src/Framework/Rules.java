@@ -7,44 +7,36 @@ import java.util.*;
 public class Rules {
 
     /**
-     * Default constructor
+     * 
      */
-    public Rules() {
-    }
+    public boolean chessMovement(AbstractChess chess, int XDisplacement, int YDisplacement) {
+        return false;
+    };
 
     /**
      * 
      */
-    public void chessMovement() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void eatChessRules() {
-        // TODO implement here
-    }
+    public boolean eatChessRules(AbstractChess initiative, List<AbstractChess> passive, int XDisplacement, int YDisplacement) {
+        return false;
+        
+    };
 
     /**
      * 
      */
     public void isNull() {
-        // TODO implement here
     }
 
     /**
      * 
      */
     public void isSameRow() {
-        // TODO implement here
     }
 
     /**
      * 
      */
     public void isSameColumn() {
-        // TODO implement here
     }
 
 }
