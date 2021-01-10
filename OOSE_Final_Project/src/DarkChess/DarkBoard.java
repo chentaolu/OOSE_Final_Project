@@ -97,31 +97,38 @@ public class DarkBoard extends Board {
     
     public List<AbstractChess> getChessList(AbstractChess initiative, AbstractChess passive) {
         List<AbstractChess> aboveChesses = new ArrayList<AbstractChess>();
+        int startY;
+        int endY;
+        int startX;
+        int endX;
         if (initiative.getX() == passive.getX()) {
-            int startY = initiative.getY();
-            int endY = passive.getY();
+            startY = initiative.getY();
+            endY = passive.getY();
             if (startY > endY) {
                 for (int turn = startY - 1 ; turn >= endY; turn--) {
+                    System.out.println(turn);
                     aboveChesses.add(getChessByLocation(initiative.getX(), turn));
                 }        
-            } else {
+            } else if(startY < endY) {
                 for (int turn = startY + 1 ; turn <= endY; turn++) {
                     aboveChesses.add(getChessByLocation(initiative.getX(), turn));
                 }
             }
-        } else {
-            int startX = initiative.getX();
-            int endX = passive.getX();
+        } else if (initiative.getY() == passive.getY()) {
+            startX = initiative.getX();
+            endX = passive.getX();
             if(startX > endX) {
                 for (int turn = startX - 1 ; turn >= endX; turn--) {
-                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    aboveChesses.add(getChessByLocation(turn, initiative.getY()));
                 }
-            } else {
+            } else if (startX < endX) {
                 for (int turn = startX + 1 ; turn <= endX; turn++) {
-                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                    aboveChesses.add(getChessByLocation(turn, initiative.getY()));
                 }
             }
         }
+        System.out.println("Color = " + aboveChesses.get(0).isGroup());
+        System.out.println("Priority = " + aboveChesses.get(0).getPriority());
         return aboveChesses; 
     }
     
