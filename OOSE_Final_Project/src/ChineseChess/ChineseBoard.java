@@ -16,7 +16,6 @@ public class ChineseBoard extends JFrame {
   
     final static int rows = 10;
     final static int cols = 9;
-    private String imagePath = "../OOSE_Final_Project/src/image/";
     
     JButton[][] buttons = new JButton[9][10];
     
@@ -53,7 +52,7 @@ public class ChineseBoard extends JFrame {
             buttons[i][j].addActionListener(this);
             buttons[i][j].setFocusPainted(false);
             buttons[i][j].setContentAreaFilled(false);                
-            //buttons[i][j].setBorderPainted(false);
+            buttons[i][j].setBorderPainted(false);
             buttons[i][j].setIcon(new ImageIcon("../OOSE_Final_Project/src/image/11.png"));
             buttons[i][j].setSize(10, 10);
             add(buttons[i][j]);
