@@ -38,5 +38,9 @@ public class Rules {
      */
     public void isSameColumn() {
     }
+    
+    public boolean endRule() {
+        return false;
+    }
 
 }

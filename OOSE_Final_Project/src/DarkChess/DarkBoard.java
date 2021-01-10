@@ -183,4 +183,8 @@ public class DarkBoard extends Board {
         return getChessByLocation(x, y).getChessPNGPath();
     } 
     
+    public String getEndGame( ) {
+        return this.darkRules.endRule(chesses);
+    }
+    
 }
