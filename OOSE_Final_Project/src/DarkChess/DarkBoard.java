@@ -150,7 +150,7 @@ public class DarkBoard extends Board {
         AbstractChess initiative = this.getChessByLocation(x1, y1);
         if (this.selectToEmpty(x2, y2)) {
             if (this.darkRules.chessMovement(initiative, x1 - x2, y1 - y2)) {
-                initiative.move(initiative, x1 - x2, y1 - y2);
+                initiative.move(initiative, x2 - x1, y2 - y1);
                 return "Success";
             } else {
                 return "WrongMove";
