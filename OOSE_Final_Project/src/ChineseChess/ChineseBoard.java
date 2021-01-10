@@ -2,35 +2,64 @@ package ChineseChess;
 
 import java.util.Set;
 import java.util.HashSet;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Graphics;
-
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+ 
 public class ChineseBoard extends JFrame {
   
-  public ChineseBoard() {
+    final static int rows = 10;
+    final static int cols = 9;
+    private String imagePath = "../OOSE_Final_Project/src/image/";
+    
+    JButton[][] buttons = new JButton[9][10];
+    
+    public ChineseBoard() {
+        
+      setTitle("Chinese Chess");
+      setSize(800, 800);
+      setLocation(50, 50);
+      CChessPanel cchessPanel = new CChessPanel();
+      add(cchessPanel);
+      setVisible(true);
+      setDefaultCloseOperation(EXIT_ON_CLOSE);
       
-    setTitle("Chinese Chess");
-    setSize(800, 800);
-    setLocation(50, 50);
-    CChessPanel cchessPanel = new CChessPanel();
-    add(cchessPanel);
-    setVisible(true);
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
     
-  }
-  
-  public static void main(String[] args) {
+    public static void main(String[] args) {
+      
+      ChineseBoard chineseBoard = new ChineseBoard();
+      
+    }
     
-    CChessBoard brd = new CChessBoard();
-    System.out.println(brd);
-    ChineseBoard chineseBoard = new ChineseBoard();
-    
-  }
-  
-  class CChessPanel extends JPanel {
-    
-    int orgX = 83, orgY = 83, side = 67;
+    class CChessPanel extends JPanel implements ActionListener {
+      
+      int orgX = 83, orgY = 83, side = 70;
+      
+      public CChessPanel() {
+        
+        setLayout(new GridLayout(9, 10));
+        for (int j = 0; j < 10; j++) {
+          for (int i = 0; i < 9; i++) {
+            buttons[i][j] = new JButton();
+            buttons[i][j].putClientProperty("INDEX", new int[] { i, j });
+            buttons[i][j].putClientProperty("GROUP", null);
+            buttons[i][j].addActionListener(this);
+            buttons[i][j].setFocusPainted(false);
+            buttons[i][j].setContentAreaFilled(false);                
+            //buttons[i][j].setBorderPainted(false);
+            buttons[i][j].setIcon(new ImageIcon("../OOSE_Final_Project/src/image/11.png"));
+            buttons[i][j].setSize(10, 10);
+            add(buttons[i][j]);
+          }
+        }
+      }
     
       @Override
       public void paintComponent(Graphics g) {
@@ -38,13 +67,13 @@ public class ChineseBoard extends JFrame {
       }
       
       private void drawGrid(Graphics g) {    
-        for (int i = 0; i < CChessBoard.cols; i++) {
+        for (int i = 0; i < cols; i++) {
           g.drawLine(orgX + i * side, orgY,
                      orgX + i * side, orgY + 4 * side);
           g.drawLine(orgX + i * side, orgY + 5 * side,
                      orgX + i * side, orgY + 9 * side);
         }
-        for (int i = 0; i < CChessBoard.rows; i++) {
+        for (int i = 0; i < rows; i++) {
           g.drawLine(orgX,            orgY + i * side,
                      orgX + 8 * side, orgY + i * side);
         }
@@ -69,7 +98,7 @@ public class ChineseBoard extends JFrame {
             drawStarAt(g, 2 + i * 2, 6);
           }
           int margin = side/15;
-          g.drawRect(orgX - margin, orgY - margin, (CChessBoard.cols - 1)* side + 2 * margin, (CChessBoard.rows - 1)* side + 2 * margin);
+          g.drawRect(orgX - margin, orgY - margin, (cols - 1)* side + 2 * margin, (rows - 1)* side + 2 * margin);
       }
       
       private void drawHalfStarAt(Graphics g, int col, int row, 
@@ -90,31 +119,11 @@ public class ChineseBoard extends JFrame {
         drawHalfStarAt(g, col, row, true);
         drawHalfStarAt(g, col, row, false);
       }
-      
-    }
 
-
-    public static class CChessBoard {
-      
-      final static int rows = 10;
-      final static int cols = 9;
-      
       @Override
-      public String toString() {
-        String brdStr = "";
-        brdStr += " ";
-        for (int i = 0; i < cols; i++) {
-          brdStr += " " + i;
-        }
-        brdStr += "\n";
-        for (int row = 0; row < rows; row++) {
-          brdStr += row + "";
-          for (int col = 0; col < cols; col++) {
-            brdStr += " .";
-          }
-          brdStr += "\n";
-        }
-        return brdStr;
+      public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
       }
       
     }
