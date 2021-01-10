@@ -90,4 +90,5 @@ public abstract class AbstractChess {
     public abstract void setMoveStrategy(MoveStrategy moveStrategy);
     public abstract EatStrategy getEatStrategy();
     public abstract void setEatStrategy(EatStrategy eatStrategy);
+    public abstract String getChessPNGPath();
 }

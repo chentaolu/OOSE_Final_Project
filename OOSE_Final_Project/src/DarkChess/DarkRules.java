@@ -26,17 +26,4 @@ public class DarkRules extends Rules {
             return true;
         }
     }
-
-    @Override
-    public void isSameRow() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void isSameColumn() {
-        // TODO Auto-generated method stub
-        
-    }
-
 }
