@@ -11,7 +11,7 @@ public class DarkHorseChess extends AbstractHorse {
     
     private EatStrategy eatStrategy;
     private MoveStrategy moveStrategy;
-    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String chessPath = "..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\";
     private String redChessPath = "24.png";
     private String blackChessPath = "8.png";
     
