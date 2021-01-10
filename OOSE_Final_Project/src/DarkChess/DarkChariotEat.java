@@ -22,5 +22,4 @@ public class DarkChariotEat implements EatStrategy {
         }
         return false;
     }
-
 }

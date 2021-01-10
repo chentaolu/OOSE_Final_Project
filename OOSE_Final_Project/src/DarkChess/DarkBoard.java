@@ -16,7 +16,7 @@ public class DarkBoard extends Board {
     private DarkChessFactory darkChessFactory = new DarkChessFactory();
     private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
     private int random[] = new int[32];
-    private String boardPath = "..\\OOSE_Final_Project\\src\\image\\board3.png";
+    private String boardPath = "..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\board3.png";
     private DarkRules darkRules = new DarkRules();
     
     public DarkBoard() {
@@ -127,8 +127,6 @@ public class DarkBoard extends Board {
                 }
             }
         }
-        System.out.println("Color = " + aboveChesses.get(0).isGroup());
-        System.out.println("Priority = " + aboveChesses.get(0).getPriority());
         return aboveChesses; 
     }
     
@@ -150,7 +148,7 @@ public class DarkBoard extends Board {
         AbstractChess initiative = this.getChessByLocation(x1, y1);
         if (this.selectToEmpty(x2, y2)) {
             if (this.darkRules.chessMovement(initiative, x1 - x2, y1 - y2)) {
-                initiative.move(initiative, x1 - x2, y1 - y2);
+                initiative.move(initiative, x2 - x1, y2 - y1);
                 return "Success";
             } else {
                 return "WrongMove";
@@ -184,5 +182,9 @@ public class DarkBoard extends Board {
     public String getChessPNGByLocation(int x, int y) {
         return getChessByLocation(x, y).getChessPNGPath();
     } 
+    
+    public String getEndGame( ) {
+        return this.darkRules.endRule(chesses);
+    }
     
 }
