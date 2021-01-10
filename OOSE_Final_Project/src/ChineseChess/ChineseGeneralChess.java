@@ -13,8 +13,8 @@ public class ChineseGeneralChess extends AbstractGeneral {
   private String redChessPath = "17.png";
   private String blackChessPath = "1.png";
 
-  public ChineseGeneralChess(int x, int y, int priority, boolean Group, boolean status, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
-    super(x, y, priority, Group, status);
+  public ChineseGeneralChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
+    super(x, y, priority, Group, true);
     // TODO Auto-generated constructor stub
     setMoveStrategy(moveStrategy);
     setEatStrategy(eatStrategy);

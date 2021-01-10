@@ -13,8 +13,8 @@ public class ChineseGuardChess extends AbstractGuard {
   private String redChessPath = "18.png";
   private String blackChessPath = "2.png";
 
-  public ChineseGuardChess(int x, int y, int priority, boolean Group, boolean status, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
-    super(x, y, priority, Group, status);
+  public ChineseGuardChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
+    super(x, y, priority, Group, true);
     // TODO Auto-generated constructor stub
     setMoveStrategy(moveStrategy);
     setEatStrategy(eatStrategy);
