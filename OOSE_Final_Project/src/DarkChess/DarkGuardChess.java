@@ -1,21 +1,24 @@
 package DarkChess;
 
 import Framework.AbstractChess;
+import Framework.AbstractGuard;
 import Framework.MoveStrategy;
 import Framework.EatStrategy;
 
 
-public class DarkGuardChess extends AbstractChess {
+public class DarkGuardChess extends AbstractGuard {
 
     
     private EatStrategy eatStrategy;    
     private MoveStrategy moveStrategy;
+    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String redChessPath = "18.png";
+    private String blackChessPath = "2.png";
     
     public DarkGuardChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
-        super(x, y, priority, Group);
+        super(x, y, priority, Group, false);
         setMoveStrategy(moveStrategy);
         setEatStrategy(eatStrategy);
-        
     }
     
     public MoveStrategy getMoveStrategy() {
@@ -54,6 +57,14 @@ public class DarkGuardChess extends AbstractChess {
             initiative.setY(initiative.getY());
             passive.setX(-1);
             passive.setY(-1);
+        }
+    }
+    
+    public String getChessPNGPath() {
+        if (super.isGroup()) {
+            return this.chessPath + this.blackChessPath;
+        } else {
+            return this.chessPath + this.redChessPath;
         }
     }
 

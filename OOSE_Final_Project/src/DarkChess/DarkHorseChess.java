@@ -1,21 +1,24 @@
 package DarkChess;
 
 import Framework.AbstractChess;
+import Framework.AbstractHorse;
 import Framework.MoveStrategy;
 import Framework.EatStrategy;
 
 
-public class DarkHorseChess extends AbstractChess {
+public class DarkHorseChess extends AbstractHorse {
 
     
     private EatStrategy eatStrategy;
     private MoveStrategy moveStrategy;
+    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String redChessPath = "24.png";
+    private String blackChessPath = "8.png";
     
     public DarkHorseChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
-        super(x, y, priority, Group);
+        super(x, y, priority, Group, false);
         setMoveStrategy(moveStrategy);
         setEatStrategy(eatStrategy);
-        
     }
     
     public MoveStrategy getMoveStrategy() {
@@ -57,4 +60,11 @@ public class DarkHorseChess extends AbstractChess {
         }
     }
 
+    public String getChessPNGPath() {
+        if (super.isGroup()) {
+            return this.chessPath + this.blackChessPath;
+        } else {
+            return this.chessPath + this.redChessPath;
+        }
+    }
 }
