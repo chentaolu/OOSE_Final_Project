@@ -40,12 +40,8 @@ public class DarkElephantChess extends AbstractElephant {
     @Override
     public void move(AbstractChess chess, int XDisplacement, int YDisplacement) {
         // TODO Auto-generated method stub
-        if (Math.sqrt(XDisplacement * XDisplacement + YDisplacement * YDisplacement) > 1) {
-            
-        } else {
-            chess.setX(chess.getX() + XDisplacement);
-            chess.setY(chess.getY() + YDisplacement);
-        }
+        chess.setX(chess.getX() + XDisplacement);
+        chess.setY(chess.getY() + YDisplacement);
     }
 
     @Override
