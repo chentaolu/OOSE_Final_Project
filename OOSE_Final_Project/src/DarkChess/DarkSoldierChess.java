@@ -52,8 +52,8 @@ public class DarkSoldierChess extends AbstractSoldier {
         // TODO Auto-generated method stub
         if (XDisplacement != 0 && YDisplacement != 0) {
         } else {
-            initiative.setX(initiative.getX());
-            initiative.setY(initiative.getY());
+            initiative.setX(passive.getX());
+            initiative.setY(passive.getY());
             passive.setX(-1);
             passive.setY(-1);
         }
