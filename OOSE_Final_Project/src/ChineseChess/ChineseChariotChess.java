@@ -2,12 +2,22 @@ package ChineseChess;
 
 import Framework.AbstractChariot;
 import Framework.AbstractChess;
+import Framework.EatStrategy;
+import Framework.MoveStrategy;
 
 public class ChineseChariotChess extends AbstractChariot {
+  
+  private MoveStrategy moveStrategy;
+  private EatStrategy eatStrategy;
+  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String redChessPath = "22.png";
+  private String blackChessPath = "6.png";
 
-  public ChineseChariotChess(int x, int y, int priority, boolean Group) {
-    super(x, y, priority, Group);
+  public ChineseChariotChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
+    super(x, y, priority, Group, true);
     // TODO Auto-generated constructor stub
+    setMoveStrategy(moveStrategy);
+    setEatStrategy(eatStrategy);
   }
 
   @Override
@@ -22,4 +32,36 @@ public class ChineseChariotChess extends AbstractChariot {
 
   }
 
+  @Override
+  public MoveStrategy getMoveStrategy() {
+    // TODO Auto-generated method stub
+    return this.moveStrategy;
+  }
+
+  @Override
+  public void setMoveStrategy(MoveStrategy moveStrategy) {
+    // TODO Auto-generated method stub
+    this.moveStrategy = moveStrategy;
+  }
+
+  @Override
+  public EatStrategy getEatStrategy() {
+    // TODO Auto-generated method stub
+    return this.eatStrategy;
+  }
+
+  @Override
+  public void setEatStrategy(EatStrategy eatStrategy) {
+    // TODO Auto-generated method stub
+    this.eatStrategy = eatStrategy;
+  }
+
+  public String getChessPNGPath() {
+    if (super.isGroup()) {
+        return this.chessPath + this.blackChessPath;
+    } else {
+        return this.chessPath + this.redChessPath;
+    }
+  }
+  
 }
