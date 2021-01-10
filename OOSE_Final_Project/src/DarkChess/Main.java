@@ -59,16 +59,6 @@ public class Main {
                 public void actionPerformed(ActionEvent e) {
                     String Action = null;
 
-                    
-                    if(round %2 == 1){
-                        nowPlay.setText("NOW P1");
-                        nowPlay.setBounds(20, 20, 200, 40);
-                        panel.add(nowPlay);
-                    } else if (round %2 == 0){
-                        nowPlay.setText("NOW P2");
-                        nowPlay.setBounds(20, 20, 200, 40);
-                        panel.add(nowPlay);
-                    }
 
                     // TODO Auto-generated method stub      
                     if (firstClick == true) {
@@ -83,7 +73,7 @@ public class Main {
                         } else {
                             whoFirst.setText("P1:紅棋 P2:黑棋");
                         }                
-                        whoFirst.setBounds(20, 80, 200, 40);
+                        whoFirst.setBounds(20, 60, 200, 40);
                         panel.add(whoFirst);                        
                     } else {
                         if (!darkBoard.selectToEmpty(x + 1, y + 1) && !darkBoard.isChessOpen(x + 1, y + 1)) {
@@ -131,6 +121,8 @@ public class Main {
                                     }
                                 }
                                 
+
+                                
                                 
                             } else if (round % 2 == 1) {    //p2                                
                                 if (p2.selectLocation.size() == 0) {
@@ -141,7 +133,7 @@ public class Main {
                                             falemove.setText("");
                                             falemove.setBounds(20, 40, 200, 40);
                                             panel.add(falemove);
-                                        } else if (darkBoard.getChessGroup(x + 1, y + 1) == p2.isColor()){
+                                        } else if (darkBoard.getChessGroup(x + 1, y + 1) != p2.isColor()){
                                             falemove.setText("點選旗子陣營錯誤");
                                             falemove.setBounds(20, 80, 200, 40);
                                             panel.add(falemove);
@@ -170,12 +162,28 @@ public class Main {
                                 }
                             }
                         }
-                        String gameStatus = darkBoard.getEndGame();
-                        if (!gameStatus.equals("continue")) {
-                            System.exit(0);
+                        
+                    }
+                    String gameStatus = darkBoard.getEndGame();
+                    if (!gameStatus.equals("continue")) {
+                        nowPlay.setText(gameStatus);
+                        nowPlay.setBounds(20, 20, 200, 40);
+                        panel.add(nowPlay);
+                    } else {
+                        if(round %2 == 0){
+                            nowPlay.setText("NOW P1");
+                            nowPlay.setBounds(20, 20, 200, 40);
+                            panel.add(nowPlay);
+                        } else if (round %2 == 1){
+                            nowPlay.setText("NOW P2");
+                            nowPlay.setBounds(20, 20, 200, 40);
+                            panel.add(nowPlay);
                         }
                     }
+
+                   
                 }
+
                 
             });
             
