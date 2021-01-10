@@ -40,8 +40,6 @@ public class DarkCannonChess extends AbstractCannon {
         // TODO Auto-generated method stub
         chess.setX(chess.getX() + XDisplacement);
         chess.setY(chess.getY() + YDisplacement);
-        System.out.println("new x = " + chess.getX());
-        System.out.println("new y = " + chess.getY());
     }
 
     @Override

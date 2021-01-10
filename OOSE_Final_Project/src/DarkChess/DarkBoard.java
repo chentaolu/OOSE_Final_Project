@@ -127,8 +127,6 @@ public class DarkBoard extends Board {
                 }
             }
         }
-        System.out.println("Color = " + aboveChesses.get(0).isGroup());
-        System.out.println("Priority = " + aboveChesses.get(0).getPriority());
         return aboveChesses; 
     }
     
