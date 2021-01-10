@@ -17,7 +17,7 @@ public class DarkHorseEat implements EatStrategy {
         if (XDisplacement != 0 && YDisplacement != 0) {
             return false;
         }
-        if (initiative.getPriority() >= passive.get(0).getPriority()) {
+        if (initiative.getPriority() >= passive.get(passive.size() - 1).getPriority()) {
             return true;
         }
         return false;
