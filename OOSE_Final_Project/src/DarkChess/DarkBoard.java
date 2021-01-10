@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 import Framework.AbstractChess;
 import Framework.Board;
 
@@ -13,7 +16,7 @@ public class DarkBoard extends Board {
     private DarkChessFactory darkChessFactory = new DarkChessFactory();
     private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
     private int random[] = new int[32];
-    private String boardPath = "..\\OOSE_Final_Project\\src\\image\\board3.png";
+    private String boardPath = "..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\board3.png";
     
     
     public DarkBoard() {
@@ -48,6 +51,10 @@ public class DarkBoard extends Board {
                 }
             }
         }  
+    }
+
+    public List<AbstractChess> getChesses(){
+        return this.chesses;
     }
     
     public String getBoardPath() {
