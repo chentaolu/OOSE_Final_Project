@@ -13,8 +13,8 @@ public class ChineseCannonChess extends AbstractCannon {
   private String redChessPath = "27.png";
   private String blackChessPath = "10.png";
 
-  public ChineseCannonChess(int x, int y, int priority, boolean Group, boolean status, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
-    super(x, y, priority, Group, status);
+  public ChineseCannonChess(int x, int y, int priority, boolean Group, MoveStrategy moveStrategy, EatStrategy eatStrategy) {
+    super(x, y, priority, Group, true);
     // TODO Auto-generated constructor stub
     setMoveStrategy(moveStrategy);
     setEatStrategy(eatStrategy);
