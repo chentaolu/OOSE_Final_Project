@@ -16,7 +16,7 @@ public class DarkBoard extends Board {
     private DarkChessFactory darkChessFactory = new DarkChessFactory();
     private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
     private int random[] = new int[32];
-    private String boardPath = "..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\board3.png";
+    private String boardPath = "..\\OOSE_Final_Project\\src\\image\\board3.png";
     private DarkRules darkRules = new DarkRules();
     
     public DarkBoard() {

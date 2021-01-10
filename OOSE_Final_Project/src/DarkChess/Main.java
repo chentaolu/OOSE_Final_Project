@@ -46,7 +46,7 @@ public class Main {
             int x = darkBoard.getChesses().get(i).getX()-1;
             int y = darkBoard.getChesses().get(i).getY()-1;
             btn[x][y] = new JButton();
-            btn[x][y].setIcon(new ImageIcon("..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\a.png")); 
+            btn[x][y].setIcon(new ImageIcon("..\\OOSE_Final_Project\\src\\image\\a.png")); 
             //..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\a.png
             btn[x][y].setBounds(xbound[x],ybound[y], 60, 60);
             btn[x][y].setBorderPainted(false);
