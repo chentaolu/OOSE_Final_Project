@@ -10,7 +10,10 @@ public class ChineseChariotEat implements EatStrategy {
   @Override
   public boolean CanEat(AbstractChess initiative, List<AbstractChess> passive, int XDisplacement, int YDisplacement) {
     // TODO Auto-generated method stub
-    return false;
+    if (XDisplacement != 0 && YDisplacement != 0) {
+      return false;
+    }
+    return true;
   }
 
 }
