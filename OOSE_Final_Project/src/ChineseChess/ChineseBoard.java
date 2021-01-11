@@ -1,7 +1,6 @@
 package ChineseChess;
 
-import java.util.Set;
-import java.util.HashSet;
+import java.util.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -11,8 +10,98 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import Framework.AbstractChess;
+import Framework.Board;
+
+public class ChineseBoard extends Board {
+  
+  private ChineseChessFactory chineseChessFactory = new ChineseChessFactory();
+  private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
+  private AbstractChess[][] board = new AbstractChess[10][9];
+  private ChineseRules chineseRules = new ChineseRules();
+  private int[][] initial = {{ 4, 3, 5, 6, 7, 6, 5, 3, 4 },
+                             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                             { 0, 1, 0, 0, 0, 0, 0, 1, 0 },
+                             { 2, 0, 2, 0, 2, 0, 2, 0, 2 },
+                             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                             { 2, 0, 2, 0, 2, 0, 2, 0, 2 },
+                             { 0, 1, 0, 0, 0, 0, 0, 1, 0 },
+                             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                             { 4, 3, 5, 6, 7, 6, 5, 3, 4 }};
+
+  public ChineseBoard() {
+    super(800, 800, 9, 10);
+    // TODO Auto-generated constructor stub
+    boolean Group;
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 9; j++) {
+        if (i < 5) {
+          Group = true;
+        } else {
+          Group = false;
+        }
+        if (initial[i][j] == 1) {
+          chesses.add(chineseChessFactory.createCannon(i, j, Group));
+        } else if (initial[i][j] == 2) {
+          chesses.add(chineseChessFactory.createSoldier(i, j, Group));
+        } else if (initial[i][j] == 3) {
+          chesses.add(chineseChessFactory.createHorse(i, j, Group));
+        } else if (initial[i][j] == 4) {
+          chesses.add(chineseChessFactory.createChariot(i, j, Group));
+        } else if (initial[i][j] == 5) {
+          chesses.add(chineseChessFactory.createElephant(i, j, Group));
+        } else if (initial[i][j] == 6) {
+          chesses.add(chineseChessFactory.createGuard(i, j, Group));
+        } else if (initial[i][j] == 7) {
+          chesses.add(chineseChessFactory.createGeneral(i, j, Group));
+        }
+        /*switch (initial[i][j]) {
+          case 1:
+            chesses.add(chineseChessFactory.createCannon(i, j, Group));
+            break;
+          case 2:
+            chesses.add(chineseChessFactory.createSoldier(i, j, Group));
+            break;
+          case 3:
+            chesses.add(chineseChessFactory.createHorse(i, j, Group));
+            break;
+          case 4:
+            chesses.add(chineseChessFactory.createChariot(i, j, Group));
+            break;
+          case 5:
+            chesses.add(chineseChessFactory.createElephant(i, j, Group));
+            break;
+          case 6:
+            chesses.add(chineseChessFactory.createGuard(i, j, Group));
+            break;
+          case 7:
+            chesses.add(chineseChessFactory.createGeneral(i, j, Group));
+            break;
+          default:
+            break;
+        }*/
+      }
+    }
+  }
+  
+  public AbstractChess getChessByLocation(int x, int y) {
+    for (int i = 0; i < chesses.size(); i++) {
+        if (chesses.get(i).getX() == x && chesses.get(i).getY() == y) {
+            return chesses.get(i);
+        }
+    }
+    return null;
+  }
+  
+  public List<AbstractChess> getChesses() {
+    return this.chesses;
+  }
+  
+}
  
-public class ChineseBoard extends JFrame {
+/*public class ChineseBoard extends JFrame {
   
     final static int rows = 10;
     final static int cols = 9;
@@ -127,4 +216,4 @@ public class ChineseBoard extends JFrame {
       
     }
   
-}
+}*/

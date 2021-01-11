@@ -1,23 +1,5 @@
 package ChineseChess;
 
-import DarkChess.DarkCannonChess;
-import DarkChess.DarkCannonEat;
-import DarkChess.DarkCannonMove;
-import DarkChess.DarkChariotChess;
-import DarkChess.DarkChariotEat;
-import DarkChess.DarkChariotMove;
-import DarkChess.DarkElephantChess;
-import DarkChess.DarkElephantEat;
-import DarkChess.DarkElephantMove;
-import DarkChess.DarkGuardChess;
-import DarkChess.DarkGuardEat;
-import DarkChess.DarkGuardMove;
-import DarkChess.DarkHorseChess;
-import DarkChess.DarkHorseEat;
-import DarkChess.DarkHorseMove;
-import DarkChess.DarkSoldierChess;
-import DarkChess.DarkSoldierEat;
-import DarkChess.DarkSoldierMove;
 import Framework.AbstractChess;
 import Framework.AbstractChessFactory;
 
