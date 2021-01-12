@@ -146,7 +146,8 @@ public class ChineseBoard extends Board {
   public String moveOrEat(int x1, int y1, int x2, int y2) {
     AbstractChess initiative = this.getChessByLocation(x1, y1);
     if (this.selectToEmpty(x2, y2)) {
-      if (this.chineseRules.chessMovement(initiative, x1 - x2, y1 - y2)) {
+      if (this.chineseRules.chessMovement(initiative, x1 - x2, y1 - y2)
+          && this.chineseRules.specialRules(chesses, initiative, x2, y2)) {
         initiative.move(initiative, x2 - x1, y2 - y1);
         return "Success";
       } else {
@@ -157,13 +158,18 @@ public class ChineseBoard extends Board {
       if (passive.isGroup() == initiative.isGroup()) {
         return "SameGroup";
       }
-      if (this.chineseRules.eatChessRules(initiative, getChessList(initiative, passive), x1 - x2, y1 - y2)) {
+      if (this.chineseRules.eatChessRules(initiative, getChessList(initiative, passive), x1 - x2, y1 - y2)
+          && this.chineseRules.specialRules(chesses, initiative, x2, y2)) {
         initiative.eat(initiative, passive, x1 - x2, y1 - y2);
         return "Success";
       } else {
         return "WrongEat";
       }
     }
+  }
+  
+  public String getGameStatus() {
+    return chineseRules.endRule(this.getChesses());
   }
   
 }

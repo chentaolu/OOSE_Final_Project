@@ -18,7 +18,7 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
     final static int rows = 10;
     final static int cols = 9;
     static boolean select = false;
-    static int round = 0;
+    static boolean round = false;
     AbstractChess selectChess;
     
     int orgX = 100, orgY = 50, side = 75;
@@ -113,7 +113,8 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
       JButton b = (JButton) e.getSource();
       if (select == false) {
         int[] selectLoc = (int[])b.getClientProperty("LOCATION");
-        if (cBoard.getChessByLocation(selectLoc[0], selectLoc[1]) != null) {
+        if (cBoard.getChessByLocation(selectLoc[0], selectLoc[1]) != null
+            && cBoard.getChessByLocation(selectLoc[0], selectLoc[1]).isGroup() == round) {
           this.selectChess = cBoard.getChessByLocation(selectLoc[0], selectLoc[1]);
           select = true;
         }
@@ -121,11 +122,30 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
         int[] targetLoc = (int[])b.getClientProperty("LOCATION");
         int[] beforeMove = {this.selectChess.getX(), this.selectChess.getY()};
         String result = cBoard.moveOrEat(this.selectChess.getX(), this.selectChess.getY(), targetLoc[0], targetLoc[1]);
+        System.out.printf("%d %d | %d %d", beforeMove[0], beforeMove[1], targetLoc[0], targetLoc[1]);
         System.out.println(result);
         if (result.equals("Success")) {
           buttons[beforeMove[0]][beforeMove[1]].setIcon(null);
           buttons[targetLoc[0]][targetLoc[1]].setIcon(
               new ImageIcon(this.selectChess.getChessPNGPath()));
+          if (beforeMove[0] != targetLoc[0] || beforeMove[1] != targetLoc[1]) {
+            if(cBoard.getGameStatus().equals("Continue")) {
+              round = !round;
+              if (round == true) {
+                this.turnBar.setText("Black's turn");
+              } else {
+                this.turnBar.setText("Red's turn");
+              }
+            } else if(cBoard.getGameStatus().equals("KingsConflict")) {
+              if (round == true) {
+                End end = new End("Red is winner!");
+              } else {
+                End end = new End("Black is winner!");
+              }
+            } else {
+              End end = new End(cBoard.getGameStatus());
+            }
+          }
         }
         select = false;
       }
