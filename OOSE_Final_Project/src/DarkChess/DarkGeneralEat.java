@@ -17,7 +17,8 @@ public class DarkGeneralEat implements EatStrategy {
         if (XDisplacement != 0 && YDisplacement != 0) {
             return false;
         }
-        if (initiative.getPriority() >= passive.get(passive.size() - 1).getPriority()) {
+        if (initiative.getPriority() >= passive.get(passive.size() - 1).getPriority() 
+            && passive.get(passive.size() - 1).getPriority() != 2) {
             return true;
         }
         return false;

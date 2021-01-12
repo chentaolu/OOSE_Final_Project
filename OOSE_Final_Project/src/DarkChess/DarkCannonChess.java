@@ -9,7 +9,7 @@ public class DarkCannonChess extends AbstractCannon {
 
     private MoveStrategy moveStrategy;
     private EatStrategy eatStrategy;
-    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String chessPath = "../OOSE_Final_Project/src/image/";
     private String redChessPath = "27.png";
     private String blackChessPath = "10.png";
     

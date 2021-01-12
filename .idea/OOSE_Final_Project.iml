@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/OOSE_Final_Project/src/DarkChess" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/OOSE_Final_Project/src/image" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/OOSE_Final_Project/src/Framework" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/OOSE_Final_Project/src/ChineseChess" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

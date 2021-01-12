@@ -11,7 +11,7 @@ public class DarkGeneralChess extends AbstractGeneral {
    
     private EatStrategy eatStrategy;
     private MoveStrategy moveStrategy;
-    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String chessPath = "../OOSE_Final_Project/src/image/";
     private String redChessPath = "17.png";
     private String blackChessPath = "1.png";
     

@@ -10,7 +10,7 @@ public class DarkSoldierChess extends AbstractSoldier {
 
     private EatStrategy eatStrategy;
     private MoveStrategy moveStrategy;
-    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
+    private String chessPath = "../OOSE_Final_Project/src/image/";
     private String redChessPath = "28.png";
     private String blackChessPath = "12.png";
     
