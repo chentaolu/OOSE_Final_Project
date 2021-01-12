@@ -11,7 +11,7 @@ public class ChineseSoldierMove implements MoveStrategy {
     if (Math.sqrt(XDisplacement * XDisplacement + YDisplacement * YDisplacement) == 1) {
       return true;
     } else {
-        return false;
+      return false;
     }
     
   }

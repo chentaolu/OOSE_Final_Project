@@ -57,31 +57,6 @@ public class ChineseBoard extends Board {
         } else if (initial[i][j] == 7) {
           chesses.add(chineseChessFactory.createGeneral(i, j, Group));
         }
-        /*switch (initial[i][j]) {
-          case 1:
-            chesses.add(chineseChessFactory.createCannon(i, j, Group));
-            break;
-          case 2:
-            chesses.add(chineseChessFactory.createSoldier(i, j, Group));
-            break;
-          case 3:
-            chesses.add(chineseChessFactory.createHorse(i, j, Group));
-            break;
-          case 4:
-            chesses.add(chineseChessFactory.createChariot(i, j, Group));
-            break;
-          case 5:
-            chesses.add(chineseChessFactory.createElephant(i, j, Group));
-            break;
-          case 6:
-            chesses.add(chineseChessFactory.createGuard(i, j, Group));
-            break;
-          case 7:
-            chesses.add(chineseChessFactory.createGeneral(i, j, Group));
-            break;
-          default:
-            break;
-        }*/
       }
     }
   }
@@ -97,6 +72,98 @@ public class ChineseBoard extends Board {
   
   public List<AbstractChess> getChesses() {
     return this.chesses;
+  }
+  
+  public boolean checkIsEmpty(int x, int y) {
+    for (int i = 0; i < chesses.size(); i++) {
+      if (chesses.get(i).getX() == x && chesses.get(i).getY() == y) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  public boolean selectToEmpty(int x, int y) {
+    if (getChessByLocation(x, y) == null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  public List<AbstractChess> getChessList(AbstractChess initiative, AbstractChess passive) {
+    List<AbstractChess> aboveChesses = new ArrayList<AbstractChess>();
+    int startY;
+    int endY;
+    int startX;
+    int endX;
+    if (initiative.getX() == passive.getX()) {
+        startY = initiative.getY();
+        endY = passive.getY();
+        if (startY > endY) {
+            for (int turn = startY - 1 ; turn >= endY; turn--) {
+                System.out.println(turn);
+                if (this.selectToEmpty(initiative.getX(), turn)) {
+                    continue;
+                } else {
+                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                }
+            }        
+        } else if(startY < endY) {
+            for (int turn = startY + 1 ; turn <= endY; turn++) {
+                if (this.selectToEmpty(initiative.getX(), turn)) {
+                    continue;
+                } else {
+                    aboveChesses.add(getChessByLocation(initiative.getX(), turn));
+                }
+            }
+        }
+    } else if (initiative.getY() == passive.getY()) {
+        startX = initiative.getX();
+        endX = passive.getX();
+        if(startX > endX) {
+            for (int turn = startX - 1 ; turn >= endX; turn--) {
+                if (this.selectToEmpty(turn, initiative.getY())) {
+                    continue;
+                } else {
+                   aboveChesses.add(getChessByLocation(turn, initiative.getY())); 
+                }
+                
+            }
+        } else if (startX < endX) {
+            for (int turn = startX + 1 ; turn <= endX; turn++) {
+                if (this.selectToEmpty(turn, initiative.getY())) {
+                    continue;
+                } else {
+                   aboveChesses.add(getChessByLocation(turn, initiative.getY())); 
+                }
+            }
+        }
+    }
+    return aboveChesses; 
+}
+  
+  public String moveOrEat(int x1, int y1, int x2, int y2) {
+    AbstractChess initiative = this.getChessByLocation(x1, y1);
+    if (this.selectToEmpty(x2, y2)) {
+      if (this.chineseRules.chessMovement(initiative, x1 - x2, y1 - y2)) {
+        initiative.move(initiative, x2 - x1, y2 - y1);
+        return "Success";
+      } else {
+        return "WrongMove";
+      }
+    } else {
+      AbstractChess passive = this.getChessByLocation(x2, y2);
+      if (passive.isGroup() == initiative.isGroup()) {
+        return "SameGroup";
+      }
+      if (this.chineseRules.eatChessRules(initiative, getChessList(initiative, passive), x1 - x2, y1 - y2)) {
+        initiative.eat(initiative, passive, x1 - x2, y1 - y2);
+        return "Success";
+      } else {
+        return "WrongEat";
+      }
+    }
   }
   
 }

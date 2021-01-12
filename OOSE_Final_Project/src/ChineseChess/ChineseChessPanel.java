@@ -9,15 +9,22 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import Framework.AbstractChess;
 
 public class ChineseChessPanel extends JPanel implements ActionListener {
   
     final static int rows = 10;
     final static int cols = 9;
+    static boolean select = false;
+    static int round = 0;
+    AbstractChess selectChess;
     
     int orgX = 100, orgY = 50, side = 75;
     ChineseBoard cBoard = new ChineseBoard();
     JButton[][] buttons = new JButton[10][9];
+    JTextField turnBar = new JTextField();
     
     public ChineseChessPanel() {
       
@@ -25,8 +32,7 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
       for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 9; j++) {
           buttons[i][j] = new JButton();
-          buttons[i][j].putClientProperty("INDEX", new int[] { i, j });
-          buttons[i][j].putClientProperty("GROUP", null);
+          buttons[i][j].putClientProperty("LOCATION", new int[] { i, j });
           if(cBoard.getChessByLocation(i, j) != null) {
             buttons[i][j].setIcon(new ImageIcon(cBoard.getChessByLocation(i, j).getChessPNGPath()));
           }
@@ -37,6 +43,9 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
           add(buttons[i][j]);
         }
       }
+      turnBar = new JTextField("Red's turn");
+      turnBar.setBounds(0, 750, 800, 30);
+      add(turnBar);
     }
     
     @Override
@@ -101,7 +110,25 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
       // TODO Auto-generated method stub
-      
+      JButton b = (JButton) e.getSource();
+      if (select == false) {
+        int[] selectLoc = (int[])b.getClientProperty("LOCATION");
+        if (cBoard.getChessByLocation(selectLoc[0], selectLoc[1]) != null) {
+          this.selectChess = cBoard.getChessByLocation(selectLoc[0], selectLoc[1]);
+          select = true;
+        }
+      } else {
+        int[] targetLoc = (int[])b.getClientProperty("LOCATION");
+        int[] beforeMove = {this.selectChess.getX(), this.selectChess.getY()};
+        String result = cBoard.moveOrEat(this.selectChess.getX(), this.selectChess.getY(), targetLoc[0], targetLoc[1]);
+        System.out.println(result);
+        if (result.equals("Success")) {
+          buttons[beforeMove[0]][beforeMove[1]].setIcon(null);
+          buttons[targetLoc[0]][targetLoc[1]].setIcon(
+              new ImageIcon(this.selectChess.getChessPNGPath()));
+        }
+        select = false;
+      }
     }
   
 }

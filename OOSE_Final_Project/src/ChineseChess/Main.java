@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,8 +18,6 @@ public class Main {
 
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    final int rows = 10;
-    final int cols = 9;
     
     JFrame frame = new JFrame();
     
