@@ -23,13 +23,17 @@ public class ChineseChariotChess extends AbstractChariot {
   @Override
   public void move(AbstractChess chess, int XDisplacement, int YDisplacement) {
     // TODO Auto-generated method stub
-
+    chess.setX(chess.getX() + XDisplacement);
+    chess.setY(chess.getY() + YDisplacement);
   }
 
   @Override
   public void eat(AbstractChess initiative, AbstractChess passive, int XDisplacement, int YDisplacement) {
     // TODO Auto-generated method stub
-
+    initiative.setX(passive.getX());
+    initiative.setY(passive.getY());
+    passive.setX(-1);
+    passive.setY(-1);
   }
 
   @Override

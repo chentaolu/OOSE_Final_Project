@@ -8,7 +8,10 @@ public class ChineseChariotMove implements MoveStrategy {
   @Override
   public boolean CanMove(AbstractChess chess, int XDisplacement, int YDisplacement) {
     // TODO Auto-generated method stub
-    return false;
+    if(XDisplacement != 0 && YDisplacement != 0) {
+      return false;
+    }
+    return true;
   }
 
 }
