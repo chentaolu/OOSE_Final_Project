@@ -17,7 +17,7 @@ public class Main {
         // TODO Auto-generated method stub
         Player p1 = new Player(); // 0
         Player p2 = new Player(); // 1
-        String emptyPath = "../OOSE_Final_Project/src/image/background.png";
+        String emptyPath = "..\\OOSE_Final_Project\\src\\image\\background.png";
         
         
         int[] xbound = {187,267,347,427,507,587,667,748};
@@ -46,7 +46,7 @@ public class Main {
             int x = darkBoard.getChesses().get(i).getX()-1;
             int y = darkBoard.getChesses().get(i).getY()-1;
             btn[x][y] = new JButton();
-            btn[x][y].setIcon(new ImageIcon("../OOSE_Final_Project/src/image/a.png")); 
+            btn[x][y].setIcon(new ImageIcon("..\\OOSE_Final_Project\\src\\image\\a.png")); 
             //..\\OOSE_Final_Project\\OOSE_Final_Project\\src\\image\\a.png
             btn[x][y].setBounds(xbound[x],ybound[y], 60, 60);
             btn[x][y].setBorderPainted(false);

@@ -9,7 +9,7 @@ public class ChineseElephantChess extends AbstractElephant {
   
   private MoveStrategy moveStrategy;
   private EatStrategy eatStrategy;
-  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
   private String redChessPath = "20.png";
   private String blackChessPath = "4.png";
 

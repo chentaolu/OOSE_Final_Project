@@ -9,7 +9,7 @@ public class ChineseHorseChess extends AbstractHorse {
   
   private MoveStrategy moveStrategy;
   private EatStrategy eatStrategy;
-  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
   private String redChessPath = "24.png";
   private String blackChessPath = "8.png";
 

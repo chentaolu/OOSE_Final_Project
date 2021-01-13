@@ -9,7 +9,7 @@ public class ChineseSoldierChess extends AbstractSoldier {
   
   private MoveStrategy moveStrategy;
   private EatStrategy eatStrategy;
-  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
   private String redChessPath = "28.png";
   private String blackChessPath = "12.png";
 

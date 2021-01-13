@@ -10,7 +10,7 @@ public class DarkElephantChess extends AbstractElephant {
     
     private EatStrategy eatStrategy;
     private MoveStrategy moveStrategy;
-    private String chessPath = "../OOSE_Final_Project/src/image/";
+    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
     private String redChessPath = "20.png";
     private String blackChessPath = "4.png";
     

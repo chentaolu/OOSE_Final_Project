@@ -9,7 +9,7 @@ public class ChineseGeneralChess extends AbstractGeneral {
   
   private MoveStrategy moveStrategy;
   private EatStrategy eatStrategy;
-  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
   private String redChessPath = "17.png";
   private String blackChessPath = "1.png";
 

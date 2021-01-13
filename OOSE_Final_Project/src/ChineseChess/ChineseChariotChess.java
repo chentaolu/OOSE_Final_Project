@@ -9,7 +9,7 @@ public class ChineseChariotChess extends AbstractChariot {
   
   private MoveStrategy moveStrategy;
   private EatStrategy eatStrategy;
-  private String chessPath = "../OOSE_Final_Project/src/image/";
+  private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
   private String redChessPath = "22.png";
   private String blackChessPath = "6.png";
 

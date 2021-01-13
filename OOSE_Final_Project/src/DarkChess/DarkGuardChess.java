@@ -11,7 +11,7 @@ public class DarkGuardChess extends AbstractGuard {
     
     private EatStrategy eatStrategy;    
     private MoveStrategy moveStrategy;
-    private String chessPath = "../OOSE_Final_Project/src/image/";
+    private String chessPath = "..\\OOSE_Final_Project\\src\\image\\";
     private String redChessPath = "18.png";
     private String blackChessPath = "2.png";
     
