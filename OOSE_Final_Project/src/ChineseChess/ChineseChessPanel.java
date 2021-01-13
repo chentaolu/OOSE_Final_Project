@@ -27,6 +27,8 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
     ChineseBoard cBoard = new ChineseBoard();
     JButton[][] buttons = new JButton[10][9];
     JTextField turnBar = new JTextField();
+    ImageIcon board = new ImageIcon(cBoard.getBoardPath());
+    JLabel label=new JLabel(board);
     
     public ChineseChessPanel() {
       
@@ -43,6 +45,8 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
           buttons[i][j].setContentAreaFilled(false);                
           buttons[i][j].setBorderPainted(false);
           add(buttons[i][j]);
+          label.setBounds(0,0,board.getIconWidth(),board.getIconHeight());
+          add(label,new Integer(Integer.MIN_VALUE));
         }
       }
       turnBar = new JTextField("Red's turn");
@@ -52,7 +56,7 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
       
     }
     
-    @Override
+    /*@Override
     public void paintComponent(Graphics g) {
       drawGrid(g);
     }
@@ -109,7 +113,7 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
     private void drawStarAt(Graphics g, int col, int row) {
       drawHalfStarAt(g, col, row, true);
       drawHalfStarAt(g, col, row, false);
-    }
+    }*/
     
     @Override
     public void actionPerformed(ActionEvent e) {
