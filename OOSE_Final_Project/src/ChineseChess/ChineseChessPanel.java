@@ -8,8 +8,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.*;
 
 import Framework.AbstractChess;
 
@@ -46,6 +48,8 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
       turnBar = new JTextField("Red's turn");
       turnBar.setBounds(0, 750, 800, 30);
       add(turnBar);
+      this.setOpaque(false);
+      
     }
     
     @Override
@@ -122,7 +126,6 @@ public class ChineseChessPanel extends JPanel implements ActionListener {
         int[] targetLoc = (int[])b.getClientProperty("LOCATION");
         int[] beforeMove = {this.selectChess.getX(), this.selectChess.getY()};
         String result = cBoard.moveOrEat(this.selectChess.getX(), this.selectChess.getY(), targetLoc[0], targetLoc[1]);
-        System.out.printf("%d %d | %d %d", beforeMove[0], beforeMove[1], targetLoc[0], targetLoc[1]);
         System.out.println(result);
         if (result.equals("Success")) {
           buttons[beforeMove[0]][beforeMove[1]].setIcon(null);

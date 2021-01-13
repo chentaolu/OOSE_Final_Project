@@ -20,24 +20,7 @@ public class Rules {
         return false;
         
     };
-
-    /**
-     * 
-     */
-    public void isNull() {
-    }
-
-    /**
-     * 
-     */
-    public void isSameRow() {
-    }
-
-    /**
-     * 
-     */
-    public void isSameColumn() {
-    }
+    
     
     public boolean endRule() {
         return false;

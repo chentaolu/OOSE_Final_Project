@@ -5,6 +5,7 @@ import java.util.*;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -24,6 +25,7 @@ public class Main {
     frame.setTitle("Chinese Chess");
     frame.setSize(800, 800);
     frame.setLocation(50, 50);
+    
     ChineseChessPanel chineseChessPanel = new ChineseChessPanel();
     frame.add(chineseChessPanel);
     frame.setVisible(true);

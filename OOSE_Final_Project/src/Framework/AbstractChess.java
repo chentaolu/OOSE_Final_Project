@@ -37,6 +37,10 @@ public abstract class AbstractChess {
     private boolean Group;
     
     public boolean status;
+    
+    private MoveStrategy moveStrategy;
+    
+    private EatStrategy eatStrategy;
 
 
     /**

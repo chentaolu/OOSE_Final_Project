@@ -37,8 +37,13 @@ public class ChineseRules extends Rules {
     }
     if(checkGeneral.get(0).getY() == checkGeneral.get(1).getY()) {
       for (AbstractChess chess: chesses) {
-        if(chess instanceof ChineseGeneralChess != true && chess.getY() == checkGeneral.get(0).getY()) {
-          return new String("Continue");
+        if(chess instanceof ChineseGeneralChess) {
+          continue;
+        } else {
+          if(chess.getY() == checkGeneral.get(0).getY()) {
+            if(chess.getX() > checkGeneral.get(0).getX() && chess.getX() < checkGeneral.get(1).getX())
+              return new String("Continue");
+          }
         }
       }
       return new String("KingsConflict");

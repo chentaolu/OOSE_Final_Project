@@ -20,6 +20,7 @@ public class ChineseBoard extends Board {
   private List<AbstractChess> chesses = new ArrayList<AbstractChess>();
   private AbstractChess[][] board = new AbstractChess[10][9];
   private ChineseRules chineseRules = new ChineseRules();
+  private String BoardPath = "../OOSE_Final_Project/src/image/ChineseBoard.png";
   private int[][] initial = {{ 4, 3, 5, 6, 7, 6, 5, 3, 4 },
                              { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                              { 0, 1, 0, 0, 0, 0, 0, 1, 0 },
@@ -170,6 +171,10 @@ public class ChineseBoard extends Board {
   
   public String getGameStatus() {
     return chineseRules.endRule(this.getChesses());
+  }
+  
+  public String getBoardPath() {
+    return this.BoardPath;
   }
   
 }
